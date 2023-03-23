@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<title>Calculator</title>
+	<style>
+      #time {
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      function displayTime() {
+        var date = new Date();
+        var time = date.toLocaleTimeString();
+        document.getElementById("time").innerHTML = time;
+      }
+      setInterval(displayTime, 1000);
+    </script>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<p>Current time: <span id="time"></span></p>
+    <!-- rest of the page content -->
+	<form action="/calculate" method="post">
+		<input type="number" step="0.0001" name="num1" required>
+		<select name="operation" required>
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="number" step="0.0001" name="num2" required>
+		<input type="email" name="email" placeholder="Enter your email" required>
+		<button type="submit">Calculate</button>
+	</form>
+</body>
+</html>
