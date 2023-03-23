@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Checker</title>
+</head>
+<body>
+	<h1>Number Checker</h1>
+	<form action="check_what_number_it_is" method="POST">
+		<label for="number">Enter a number:</label>
+		<input type="number" name="number" id="number" required>
+		<button type="submit">Check</button>
+	</form>
+	{% if result %}
+		<p>The number is {{ result }}.</p>
+	{% endif %}
+	    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Navigation Example</title>
+</head>
+<body>
+    <h1>Navigation Example</h1>
+    <p>Welcome to the navigation example. Click on the links below to navigate to different pages:</p>
+    <ul>
+        <li><a href="{{ url_for('even') }}">Check Even or Not</a></li>
+        <li><a href="{{ url_for('even_range') }}">Check Even Number Range</a></li>
+        <li><a href="{{ url_for('prime') }}">Check Prime or Not</a></li>
+        <li><a href="{{ url_for('prime_range') }}">Check Prime Number Range</a></li></br>
+        <li><b><a href="{{ url_for('even_odd_prime') }}">Even, Odd, and Prime Number Separation</a></b></li>
+        <br>
+        <li><a href="{{ url_for('number_checker') }}">Check Given Number is Even, Odd or Prime</a></li>
+        <li><a href="{{ url_for('mobile') }}">Number Checker</a></li>
+        <li><a href="{{ url_for('check_mobile_number') }}">Check Indian Mobile Number Status etc!</a></li>
+
+
+    </ul>
+</body>
+</html>

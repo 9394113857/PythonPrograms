@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Divisible by 2 Checker</title>
+</head>
+<body>
+	<h1>Is Your Number Divisible by 2?</h1>
+	{% if result %}
+		<p>{{ result }}</p>
+	{% endif %}
+	<form action="find_even_or_not" method="POST">
+		<label for="number">Enter a number:</label>
+		<input type="number" name="number" id="number">
+		<button type="submit">Check</button>
+	</form>
+	    <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+</body>
+</html>

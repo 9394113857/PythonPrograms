@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even, Odd, and Prime Number Results</title>
+</head>
+<body>
+    <h1>Results:</h1>
+            <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    <h2>Even numbers:</h2>
+    <ul>
+        {% for num in even %}
+        <li>{{ num }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Odd numbers:</h2>
+    <ul>
+        {% for num in odd %}
+        <li>{{ num }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Prime numbers:</h2>
+    <ul>
+        {% for num in prime %}
+        <li>{{ num }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
