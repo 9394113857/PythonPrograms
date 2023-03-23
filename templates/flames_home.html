@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FLAMES Game</title>
+  </head>
+  <body>
+    <h1>Enter Your Names</h1>
+    <form action="{{ url_for('result') }}" method="post">
+      <label for="name1">Your Name:</label>
+      <input type="text" id="name1" name="name1"><br><br>
+      <label for="name2">Your Crush's Name:</label>
+      <input type="text" id="name2" name="name2"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
