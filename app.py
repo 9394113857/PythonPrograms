@@ -194,5 +194,61 @@ def nnn():
     return render_template('index.html')
 
 
+@app.route('/discount_form', methods=['GET', 'POST'])
+def discount_form():
+    return render_template('discount_form.html')
+
+
+@app.route('/calculate_discount', methods=['GET', 'POST'])
+def calculate_discount():
+    if request.method == 'POST':
+        price = float(request.form['price'])
+        discount = float(request.form['discount'])
+        discounted_price = price * (1 - discount / 100)
+        return render_template('discount_results.html', discounted_price=discounted_price)
+    else:
+        return render_template('discount_form.html')
+
+
+@app.route('/commission_form', methods=['GET', 'POST'])
+def commission_form():
+    return render_template('commission_form.html')
+
+
+@app.route('/calculate_commission', methods=['POST'])
+def calculate_commission():
+    if request.method == 'POST':
+        price = float(request.form['price'])
+        commission = float(request.form['commission'])
+        total_commission = price * commission / 100
+        # return f"Commission: {commission}"
+        return render_template('commission_results.html', price=price, commission=commission,
+                               total_commission=total_commission)
+    else:
+        return render_template('commission_form.html')
+
+
+@app.route('/interest_form', methods=['GET', 'POST'])
+def interest_form():
+    return render_template('interest_form.html')
+
+
+@app.route('/calculate_interest', methods=['POST'])
+def calculate_interest():
+    price = float(request.form['price'])
+    interest_rate = float(request.form['interest_rate'])
+    tenure = int(request.form['tenure'])
+
+    interest = (price * interest_rate * tenure) / 100
+
+    monthly_interest_rate = interest_rate / (12 * 100)
+    months = tenure * 12
+    monthly_payment = (price * monthly_interest_rate) / (1 - (1 + monthly_interest_rate) ** (-months))
+
+    Total_Payable = price + interest
+
+    return render_template('interest_form.html', interest=interest, monthly_payment=monthly_payment, price=price, interest_rate=interest_rate, tenure=tenure, totalpay=Total_Payable )
+
+
 if __name__ == '__main__':
     app.run(debug=True)
